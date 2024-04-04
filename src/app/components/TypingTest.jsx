@@ -33,10 +33,10 @@ const TypingTest = ({ paragraph, onComplete }) => {
 
   const getLetterColor = (index) => {
     if (index < typedText.length) {
-      if (wrongLetters.includes(index) && paragraph[index] !== ' ') {
-        return 'red'; // Incorrect letter
+      if (wrongLetters.includes(index) || (typedText[index] === ' ' && paragraph[index] !== ' ')) {
+        return 'red'; // Incorrect letter or space entered in the wrong place
       } else {
-        return 'white'; // Correct letter
+        return 'white'; // Correct letter or space
       }
     }
     return '#707274'; // Yet to be typed letter
