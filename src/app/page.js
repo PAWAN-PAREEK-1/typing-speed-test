@@ -10009,7 +10009,7 @@ const getRandomParagraph = () => {
   
 ];
 
-  const paragraph = Array.from({ length: 50 }, () => words[Math.floor(Math.random() * words.length)]);
+  const paragraph = Array.from({ length: 10 }, () => words[Math.floor(Math.random() * words.length)]);
   return paragraph.join(' ');
 };
 
@@ -10023,7 +10023,7 @@ const Home = () => {
     setTypingComplete(true);
   
     // Calculate accuracy logic...
-    const correctWordsCount = inputValue.trim().split(/\s+/).filter((word, index) => word === paragraph.split(' ')[index]).length;
+    const correctWordsCount = inputValue.trim().split(/\s+/).filter((char, index) => char === paragraph.split(' ')[index]).length;
     const accuracyPercentage = (correctWordsCount / paragraph.split(' ').length) * 100;
     setAccuracy(accuracyPercentage.toFixed(2));
 
