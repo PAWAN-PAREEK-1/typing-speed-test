@@ -12,7 +12,7 @@ const getRandomParagraph = () => {
   return paragraph.join(' ');
 };
 
-const Home = () => {
+const Home = ({}) => {
   const [paragraph, setParagraph] = useState(getRandomParagraph());
   const [typingComplete, setTypingComplete] = useState(false);
   const [accuracy, setAccuracy] = useState(0);
@@ -61,71 +61,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// "use client"
-// import { useState } from 'react';
-// import TypingTest from './components/TypingTest';
-// import TypingTestResults from './components/TypingTestResults';
-
-// const getRandomParagraph = () => {
-//   // Function to generate random paragraph
-//   // You can modify this as per your requirements
-//   const words = ['apple', 'banana', 'orange', 'grape', 'kiwi']; // Example words
-//   const paragraph = Array.from({ length: 10 }, () => words[Math.floor(Math.random() * words.length)]).join(' ');
-//   return paragraph;
-// };
-
-// const Home = () => {
-//   const [paragraph] = useState(getRandomParagraph());
-//   const [typingComplete, setTypingComplete] = useState(false);
-//   const [accuracy, setAccuracy] = useState(0);
-//   const [typingSpeed, setTypingSpeed] = useState(0);
-
-//   const handleTypingComplete = (inputValue) => {
-//     setTypingComplete(true);
-
-//     // Calculate accuracy and typing speed
-//     const correctChars = paragraph.length;
-//     const typedChars = inputValue.length;
-//     const correctTypedChars = inputValue.split('').filter((char, index) => char === paragraph[index]).length;
-//     const accuracyPercentage = (correctTypedChars / correctChars) * 100;
-//     const timeTakenInSeconds = 1; // You can calculate this based on user's typing speed
-//     const typingSpeedWordsPerMinute = (typedChars / timeTakenInSeconds) * 60;
-
-//     setAccuracy(accuracyPercentage.toFixed(2));
-//     setTypingSpeed(typingSpeedWordsPerMinute.toFixed(2));
-
-//     console.log('Paragraph is complete'); // Log in the console when paragraph is completed
-//     window.location.href = '/TypingTestResults'; // Redirect to result page
-// };
-//   return (
-//     <div className=''>
-//       {typingComplete ? (
-//         <TypingTestResults accuracy={accuracy} typingSpeed={typingSpeed} />
-//       ) : (
-//         <TypingTest paragraph={paragraph} onComplete={handleTypingComplete} />
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Home;
