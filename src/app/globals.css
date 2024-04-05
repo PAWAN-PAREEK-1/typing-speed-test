@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Apply Montserrat font to .mainText class */
-.mainText {
+.mainText  {
   font-family: "Montserrat", sans-serif;
   font-size: 35px;
   word-spacing: 0.1em;
@@ -56,4 +56,15 @@
   font-size: 25px;
   font-family: sans-serif;
   width: 100%;
+}
+
+.heading  {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  word-spacing: 0.1em;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  line-height: 1.5; 
+  text-align: center;/* Adjust line height to ensure proper spacing */
+  
 }

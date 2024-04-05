@@ -58,6 +58,8 @@ const TypingTest = ({ paragraph, onComplete }) => {
   };
 
   return (
+<>
+    
     <div
       style={{
         backgroundColor: '#28292b',
@@ -66,6 +68,7 @@ const TypingTest = ({ paragraph, onComplete }) => {
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
+        flexDirection:'column',
         alignItems: 'center',
         // wordWrap: 'break-word',
         // fontSize: '25px',
@@ -76,6 +79,8 @@ const TypingTest = ({ paragraph, onComplete }) => {
       tabIndex="0"
       ref={paragraphRef} className='maindiv'
     >
+      <div className='heading'><h1>Please start typing</h1></div>
+      
       <div style={{ width: '60%', textJustify: 'left' }} className="mainText typewriter">
         {paragraph.split('').map((letter, index) => (
           <span key={index} style={{
@@ -88,6 +93,7 @@ const TypingTest = ({ paragraph, onComplete }) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
