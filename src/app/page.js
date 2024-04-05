@@ -10009,7 +10009,7 @@ const getRandomParagraph = () => {
   
 ];
 
-  const paragraph = Array.from({ length: 10 }, () => words[Math.floor(Math.random() * words.length)]);
+  const paragraph = Array.from({ length: 25 }, () => words[Math.floor(Math.random() * words.length)]);
   return paragraph.join(' ');
 };
 
