@@ -7,7 +7,7 @@ const TypingTestResults = ({ accuracy, typingSpeed }) => {
     <div>
       <h1>Typing Speed Test Results</h1>
       <p>Accuracy: {accuracy}%</p>
-      <p>Typing Speed: {typingSpeed} characters per minute</p>
+      <p>Typing Speed: {typingSpeed} word per minute</p>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../globals.css';
 
 const TypingTest = ({ paragraph, onComplete }) => {
@@ -21,7 +21,6 @@ const TypingTest = ({ paragraph, onComplete }) => {
       const wordsPerSecond = completedWords / timeInSeconds;
       const wordsPerMinute = wordsPerSecond * 60;
       setTypingSpeed(wordsPerMinute.toFixed(2));
-      console.log('Typing Speed:', typingSpeed);
     }
   }, [completedWords, startTime]);
 
@@ -33,12 +32,10 @@ const TypingTest = ({ paragraph, onComplete }) => {
 
       if (key === ' ' && typedText.trim() !== '') {
         setCompletedWords((prevCount) => prevCount + 1);
-        console.log('Completed words:', completedWords + 1);
       }
 
       if (updatedTypedText.length === paragraph.length) {
-        console.log('Paragraph completed');
-        return onComplete(updatedTypedText);
+        return onComplete(updatedTypedText, Date.now() - startTime, typingSpeed); // Pass typing speed
       }
 
       if (key !== paragraph[typedText.length] && key !== ' ') {
@@ -85,10 +82,6 @@ const TypingTest = ({ paragraph, onComplete }) => {
             {letter}
           </span>
         ))}
-      </div>
-      <div>
-        Typing Speed: {typingSpeed} words per minute
-        
       </div>
     </div>
   );

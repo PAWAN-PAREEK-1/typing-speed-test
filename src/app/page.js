@@ -12,37 +12,26 @@ const getRandomParagraph = () => {
   return paragraph.join(' ');
 };
 
-const Home = ({}) => {
+const Home = () => {
   const [paragraph, setParagraph] = useState(getRandomParagraph());
   const [typingComplete, setTypingComplete] = useState(false);
   const [accuracy, setAccuracy] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(0);
+  const [typingSpeedTest, setTypingSpeedTest] = useState(0); // Renamed typingSpeed to typingSpeedTest
 
-  const handleTypingComplete = (inputValue, timeTaken) => {
+  const handleTypingComplete = (inputValue, timeTaken, typingSpeed) => {
     setTypingComplete(true);
   
-    const typedWords = inputValue.trim().split(/\s+/); // Split typed text into words
-    const typedWordCount = typedWords.length;
-  
-    if (timeTaken === 1) {
-      setTypingSpeed(0); // Prevent division by zero
-    } else {
-      const typingSpeedWPM = (typedWordCount / (timeTaken / 1000)) * 60; // Convert timeTaken to seconds and calculate WPM
-      setTypingSpeed(typingSpeedWPM.toFixed(2)); // Set typing speed, rounded to 2 decimal places
-    }
-  
-    // Calculate accuracy
-    const correctWords = paragraph.split(' ');
-    const correctTypedWords = typedWords.filter((word, index) => word === correctWords[index]).length;
-    const accuracyPercentage = (correctTypedWords / correctWords.length) * 100;
+    // Calculate accuracy logic...
+    const correctWordsCount = inputValue.trim().split(/\s+/).filter((word, index) => word === paragraph.split(' ')[index]).length;
+    const accuracyPercentage = (correctWordsCount / paragraph.split(' ').length) * 100;
     setAccuracy(accuracyPercentage.toFixed(2));
+
+    setTypingSpeedTest(typingSpeed); // Set typingSpeedTest using the passed typingSpeed
   };
   
-
   const handleRestart = () => {
     setTypingComplete(false);
     setAccuracy(0);
-    setTypingSpeed(0);
     setParagraph(getRandomParagraph());
   };
 
@@ -50,7 +39,7 @@ const Home = ({}) => {
     <div>
       {typingComplete ? (
         <div>
-          <TypingTestResults accuracy={accuracy} typingSpeed={typingSpeed} />
+          <TypingTestResults accuracy={accuracy} typingSpeed={typingSpeedTest} />
           <button onClick={handleRestart}>Restart Typing</button>
         </div>
       ) : (
