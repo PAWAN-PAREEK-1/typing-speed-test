@@ -1,5 +1,4 @@
 "use client"
-// pages/index.js
 import React, { useState } from 'react';
 import TypingTest from './components/TypingTest';
 import TypingTestResults from './components/TypingTestResults';
@@ -38,10 +37,7 @@ const Home = () => {
   return (
     <div>
       {typingComplete ? (
-        <div>
-          <TypingTestResults accuracy={accuracy} typingSpeed={typingSpeedTest} />
-          <button onClick={handleRestart}>Restart Typing</button>
-        </div>
+        <TypingTestResults accuracy={accuracy} typingSpeed={typingSpeedTest} handleRestart={handleRestart} />
       ) : (
         <TypingTest paragraph={paragraph} onComplete={handleTypingComplete} />
       )}
@@ -50,3 +46,4 @@ const Home = () => {
 };
 
 export default Home;
+

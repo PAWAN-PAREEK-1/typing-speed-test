@@ -49,18 +49,18 @@ const TypingTest = ({ paragraph, onComplete }) => {
   const getLetterColor = (index) => {
     if (index < typedText.length) {
       if (wrongLetters.includes(index) || (typedText[index] === ' ' && paragraph[index] !== ' ')) {
-        return 'red'; 
+        return '#7e2a33'; 
       } else {
-        return 'white'; 
+        return '#d1d0c5'; 
       }
     }
-    return '#707274';
+    return '#646669';
   };
 
   return (
     <div
       style={{
-        backgroundColor: 'black',
+        backgroundColor: '#28292b',
         color: 'white',
         padding: '20px',
         height: '100vh',
