@@ -10,10 +10,33 @@
   word-spacing: 0.1em;
   letter-spacing: 0.1em;
   font-weight: 700;
-  
+
 }
 .typingSpeed{
   padding-inline: 5px;
   
 }
+/* Keyframes for typing animation */
+
+
+.cursor {
+  display: inline-block;
+  width: 3px; /* Adjust the width of the cursor */
+  height: 1.2em; /* Adjust the height of the cursor */
+  background-color: yellow; /* Color of the cursor */
+  animation: blinkCursor 1s step-end infinite; /* Animation for blinking */
+}
+
+@keyframes blinkCursor {
+  50% {
+    opacity: 0; /* Hide the cursor at 50% of the animation */
+  }
+}
+
+
+
+
+
+
+
 

@@ -76,10 +76,11 @@ const TypingTest = ({ paragraph, onComplete }) => {
       tabIndex="0"
       ref={paragraphRef}
     >
-      <div style={{ width: '60%', textJustify: 'center' }} className="mainText">
+      <div style={{ width: '60%', textJustify: 'center' }} className="mainText typewriter">
         {paragraph.split('').map((letter, index) => (
           <span key={index} style={{ color: getLetterColor(index) }}>
             {letter}
+            {index === typedText.length -1 && <span className="cursor"></span>}
           </span>
         ))}
       </div>
