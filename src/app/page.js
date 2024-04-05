@@ -10023,10 +10023,9 @@ const Home = () => {
     setTypingComplete(true);
   
     // Calculate accuracy logic...
-    const correctWordsCount = inputValue.trim().split(/\s+/).filter((char, index) => char === paragraph.split(' ')[index]).length;
-    const accuracyPercentage = (correctWordsCount / paragraph.split(' ').length) * 100;
+    const correctCharactersCount = inputValue.split('').filter((char, index) => char === paragraph[index]).length;
+    const accuracyPercentage = (correctCharactersCount / paragraph.length) * 100;
     setAccuracy(accuracyPercentage.toFixed(2));
-
     setTypingSpeedTest(typingSpeed); // Set typingSpeedTest using the passed typingSpeed
   };
   
