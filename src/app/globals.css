@@ -6,20 +6,19 @@
 /* Apply Montserrat font to .mainText class */
 .mainText {
   font-family: "Montserrat", sans-serif;
-  font-size:35px;
+  font-size: 35px;
   word-spacing: 0.1em;
   letter-spacing: 0.1em;
   font-weight: 700;
-  line-height: 3rem;
-
-}
-.typingSpeed{
-  padding-inline: 5px;
+  line-height: 1.5; /* Adjust line height to ensure proper spacing */
   
 }
+
+.typingSpeed {
+  padding-inline: 5px;
+}
+
 /* Keyframes for typing animation */
-
-
 .cursor {
   display: inline-block;
   width: 3px; /* Adjust the width of the cursor */
@@ -43,10 +42,18 @@
   opacity: 1; /* Show the text */
 }
 
-
-
-
-
-
-
-
+/* .maindiv CSS remains unchanged from the previous version */
+.maindiv {
+  background-color: #28292b;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Ensure text wraps correctly */
+  word-wrap: break-word;
+  font-size: 25px;
+  font-family: sans-serif;
+  width: 100%;
+}

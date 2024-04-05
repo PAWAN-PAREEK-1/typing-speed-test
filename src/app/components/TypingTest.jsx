@@ -67,16 +67,16 @@ const TypingTest = ({ paragraph, onComplete }) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        wordWrap: 'break-word',
-        fontSize: '25px',
-        fontFamily: 'sans-serif',
+        // wordWrap: 'break-word',
+        // fontSize: '25px',
+        // fontFamily: 'sans-serif',
         width: '100%',
       }}
       onKeyDown={handleKeyDown}
       tabIndex="0"
-      ref={paragraphRef}
+      ref={paragraphRef} className='maindiv'
     >
-      <div style={{ width: '60%', textJustify: 'center' }} className="mainText typewriter">
+      <div style={{ width: '60%', textJustify: 'left' }} className="mainText typewriter">
         {paragraph.split('').map((letter, index) => (
           <span key={index} style={{
             color: getLetterColor(index),
