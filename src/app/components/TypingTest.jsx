@@ -8,38 +8,40 @@ const TypingTest = ({ paragraph, onComplete }) => {
   const paragraphRef = useRef(null);
 
   useEffect(() => {
-    // Focus on the paragraph when the component mounts
+    console.log('TypingTest component mounted'); // Check if the component mounts
     paragraphRef.current.focus();
   }, []);
 
   const handleKeyDown = (e) => {
     const { key } = e;
-    
+  
     // Check if the pressed key is a correct English letter or space
     if (/^[a-zA-Z\s]$/.test(key)) {
       const updatedTypedText = typedText + key;
-
-      if (updatedTypedText === paragraph) {
-        onComplete();
+  
+      if (updatedTypedText.length === paragraph.length) {
+        console.log('Paragraph completed');
+        return onComplete(updatedTypedText);
       }
-
+  
       if (key !== paragraph[typedText.length] && key !== ' ') {
         setWrongLetters([...wrongLetters, typedText.length]);
       }
-
+  
       setTypedText(updatedTypedText);
     }
   };
+  
 
   const getLetterColor = (index) => {
     if (index < typedText.length) {
       if (wrongLetters.includes(index) || (typedText[index] === ' ' && paragraph[index] !== ' ')) {
-        return 'red'; // Incorrect letter or space entered in the wrong place
+        return 'red'; 
       } else {
-        return 'white'; // Correct letter or space
+        return 'white'; 
       }
     }
-    return '#707274'; // Yet to be typed letter
+    return '#707274';
   };
 
   return (
@@ -58,12 +60,12 @@ const TypingTest = ({ paragraph, onComplete }) => {
         width: '100%',
       }}
       onKeyDown={handleKeyDown}
-      tabIndex="0" // Allow div to be focusable
-      ref={paragraphRef} // Reference to the paragraph
+      tabIndex="0"
+      ref={paragraphRef}
     >
-      <div style={{ width: '60%',textJustify:"center" }} className='mainText'>
+      <div style={{ width: '60%', textJustify: "center" }} className='mainText'>
         {paragraph.split('').map((letter, index) => (
-          <span key={index} style={{ color: getLetterColor(index)}}>
+          <span key={index} style={{ color: getLetterColor(index) }}>
             {letter}
           </span>
         ))}
@@ -71,5 +73,6 @@ const TypingTest = ({ paragraph, onComplete }) => {
     </div>
   );
 };
+
 
 export default TypingTest;
