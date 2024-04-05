@@ -49,9 +49,9 @@ const TypingTest = ({ paragraph, onComplete }) => {
   const getLetterColor = (index) => {
     if (index < typedText.length) {
       if (wrongLetters.includes(index) || (typedText[index] === ' ' && paragraph[index] !== ' ')) {
-        return '#7e2a33'; 
+        return '#7e2a33';
       } else {
-        return '#d1d0c5'; 
+        return '#d1d0c5';
       }
     }
     return '#646669';
@@ -78,9 +78,12 @@ const TypingTest = ({ paragraph, onComplete }) => {
     >
       <div style={{ width: '60%', textJustify: 'center' }} className="mainText typewriter">
         {paragraph.split('').map((letter, index) => (
-          <span key={index} style={{ color: getLetterColor(index) }}>
+          <span key={index} style={{
+            color: getLetterColor(index),
+            transition: 'color 0.3s ease' // Apply transition to color property
+          }}>
             {letter}
-            {index === typedText.length -1 && <span className="cursor"></span>}
+            {index === typedText.length - 1 && <span className="cursor"></span>}
           </span>
         ))}
       </div>

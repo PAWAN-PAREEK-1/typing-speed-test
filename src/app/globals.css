@@ -10,6 +10,7 @@
   word-spacing: 0.1em;
   letter-spacing: 0.1em;
   font-weight: 700;
+  line-height: 3rem;
 
 }
 .typingSpeed{
@@ -31,6 +32,15 @@
   50% {
     opacity: 0; /* Hide the cursor at 50% of the animation */
   }
+}
+
+.typed-text {
+  opacity: 0; /* Hide the text initially */
+  transition: opacity 0.5s ease; /* Apply transition effect to opacity property */
+}
+
+.typed-text.visible {
+  opacity: 1; /* Show the text */
 }
 
 
