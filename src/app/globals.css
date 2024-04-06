@@ -1,16 +1,22 @@
 /* styles.css */
 
 /* Import Montserrat font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 /* Apply Montserrat font to .mainText class */
 .mainText  {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Space Mono", monospace;
   font-size: 35px;
   word-spacing: 0.1em;
   letter-spacing: 0.1em;
   font-weight: 700;
   line-height: 1.5; /* Adjust line height to ensure proper spacing */
+  position: relative;
+  text-align: justify;
+  margin: auto;
+  width: fit-content;
   
 }
 
@@ -25,6 +31,7 @@
   height: 1.2em; /* Adjust the height of the cursor */
   background-color: yellow; /* Color of the cursor */
   animation: blinkCursor 1s step-end infinite; /* Animation for blinking */
+  /* position: absolute; */
 }
 
 @keyframes blinkCursor {
@@ -52,14 +59,14 @@
   justify-content: center;
   align-items: center;
   /* Ensure text wraps correctly */
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   font-size: 25px;
   font-family: sans-serif;
   width: 100%;
 }
 
 .heading  {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Space Mono", monospace;
   font-size: 20px;
   word-spacing: 0.1em;
   letter-spacing: 0.1em;
