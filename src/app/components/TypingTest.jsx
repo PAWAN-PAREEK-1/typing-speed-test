@@ -49,7 +49,7 @@ const TypingTest = ({ paragraph, onComplete }) => {
   const getLetterColor = (index) => {
     if (index < typedText.length) {
       if (wrongLetters.includes(index) || (typedText[index] === ' ' && paragraph[index] !== ' ')) {
-        return '#7e2a33';
+        return '#000080';
       } else {
         return '#d1d0c5';
       }
