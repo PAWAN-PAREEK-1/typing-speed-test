@@ -62,8 +62,9 @@ const TypingTest = ({ paragraph, onComplete }) => {
     
     <div
       style={{
-        backgroundColor: '#28292b',
-        color: 'white',
+        // backgroundColor: '#28292b',
+        backgroundColor: '#fff',
+        color: 'black',
         padding: '20px',
         height: '100vh',
         display: 'flex',
